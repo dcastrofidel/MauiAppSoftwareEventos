@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppSoftwareEventos.Views.ContratacaoDeEventos"        
+             BackgroundColor="LightGray">
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="CenterAndExpand" Padding="10">
+        <Label Text="Cadastro de Eventos"
+               FontSize="40" TextColor="Black" 
+               FontFamily="Mistery"
+               HorizontalTextAlignment="Center"
+               Margin="20"/>
+
+        <Frame Padding="10" BackgroundColor="MediumPurple" BorderColor="White">
+            <VerticalStackLayout>
+
+                    <Frame Margin="5" BackgroundColor="LightSteelBlue" >
+                        <VerticalStackLayout >
+                            <Label Text="Nome do Evento:" FontSize="17" TextColor="Black"/>
+                            <Entry x:Name="nome_evento" Placeholder="Insira o Nome do Evento!"/>
+    </VerticalStackLayout>
+    </Frame>
+
+    <Frame Margin="5" BackgroundColor="LightSteelBlue">
+        <VerticalStackLayout>
+            <Label Text="Quantidade de Participantes:" FontSize="17" TextColor="Black" />
+            <Entry x:Name="qnt_Participantes" Placeholder="Insíra a Quantidade de Participantes!" HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </Frame>
+
+    <Frame Padding="10" Margin="5" BackgroundColor="LightSteelBlue">
+        <VerticalStackLayout>
+
+            <Label Text="Data de Início e Término do Evento:" FontSize="17" Margin="10" TextColor="Black"/>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" >
+                <Label Text="Início:" TextColor="Black" FontAttributes="Bold"/>
+                <DatePicker x:Name="dtpck_inicio" Format="dd/MM/yyyy" Margin="5"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" >
+                <Label Text="Término:" TextColor="Black" FontAttributes="Bold"/>
+                <DatePicker x:Name="dtpck_termino" Format="dd/MM/yyyy" Margin="5"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </Frame>
+
+    <Frame Margin="5" BackgroundColor="LightSteelBlue">
+        <VerticalStackLayout>
+            <Label Text="Local do Evento:" FontSize="17" TextColor="Black"/>
+            <Entry x:Name="local_evento" Placeholder="Insíra o endereço do Local do Evento!"/>
+        </VerticalStackLayout>
+    </Frame>
+
+    <Frame Margin="5" BackgroundColor="LightSteelBlue">
+        <VerticalStackLayout>
+            <Label Text="Custo por Participante:" FontSize="17" TextColor="Black" />
+            <Entry x:Name="custo_participante" Placeholder="EX: R$20,00"/>
+        </VerticalStackLayout>
+    </Frame>
+
+    </VerticalStackLayout>
+    </Frame>
+
+    <Button x:Name="btn_cad_concluido" Text="Concluir Cadastro" 
+                Clicked="btn_avancar_Clicked_1" Margin="10" 
+                HorizontalOptions="Center" 
+                BackgroundColor="LightSteelBlue"/>
+
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

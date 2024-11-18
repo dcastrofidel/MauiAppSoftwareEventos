@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppSoftwareEventos.Views.EventoCadastrado"
+             Title="EventoCadastrado"
+             BackgroundColor="LightGray">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="CenterAndExpand" Padding="10">
+
+        <Label Text="Cadastro Concluído"
+               FontSize="40" TextColor="Black" 
+               FontFamily="Mistery"
+               HorizontalTextAlignment="Center"
+               Margin="20"/>
+
+            <Frame Padding="10" BackgroundColor="MediumPurple" BorderColor="White">
+                <VerticalStackLayout>
+                    <Frame Margin="5" BackgroundColor="LightSteelBlue">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Nome do Evento:" FontSize="17" HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding NomeDoEvento}" FontSize="17" HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </Frame>
+
+                    <Frame Margin="5" BackgroundColor="LightSteelBlue" >
+                        <Grid ColumnDefinitions="*, *, *" RowDefinitions="Auto, Auto" >
+                            
+                            <Label Grid.Row="0" Grid.Column="0" Text="Início:" FontSize="13"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Término:" FontSize="13"/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="Duração(Dias):" FontSize="13"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataTermino, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding DuracaoEvento}"/>
+                            
+                        </Grid>
+                </Frame>
+
+                    <Frame Margin="5" BackgroundColor="LightSteelBlue" >
+                        <VerticalStackLayout>
+                            <Label Text="Quantidade de Participantes:" FontSize="17" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding QntParticipantes}" FontSize="17" HorizontalOptions="CenterAndExpand"/>
+                        </VerticalStackLayout>  
+                </Frame>
+
+                    <Frame Margin="5" BackgroundColor="LightSteelBlue" >
+                        <VerticalStackLayout>
+                            <Label Text="Local do Evento:" FontSize="17" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding LocalEvento}" FontSize="17" HorizontalOptions="CenterAndExpand"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame Margin="5" BackgroundColor="LightSteelBlue" >
+                        <VerticalStackLayout>
+                            <Label Text="Custo Por Participante:" FontSize="17" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding CustoParticipante,  StringFormat='{}{0:c}'}" FontSize="17" HorizontalOptions="CenterAndExpand"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame Margin="5" BackgroundColor="LightSteelBlue" >
+                        <VerticalStackLayout>
+                            <Label Text="Valor Total do Evento:" FontSize="17" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding CustoEvento,  StringFormat='{}{0:c}'}" FontSize="17" HorizontalOptions="CenterAndExpand"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                </VerticalStackLayout>
+        </Frame>
+
+            <Button Text="Voltar" BackgroundColor="LightSteelBlue"
+                    x:Name="btn_voltar" Margin="10"
+                    HorizontalOptions="Center" Clicked="btn_voltar_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
